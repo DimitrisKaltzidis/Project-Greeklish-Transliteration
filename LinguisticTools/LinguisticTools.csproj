@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B33CE1D-C9A2-4660-ABDA-35BEAA21C82C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LinguisticTools</RootNamespace>
+    <AssemblyName>LinguisticTools</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="GreeklishHelper.cs" />
+    <Compile Include="LanguageDetector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spell\Hunspell.cs" />
+    <Compile Include="Spell\Hyphen.cs" />
+    <Compile Include="Spell\HyphenResult.cs" />
+    <Compile Include="Spell\LanguageConfig.cs" />
+    <Compile Include="Spell\Marshalling.cs" />
+    <Compile Include="Spell\MyThes.cs" />
+    <Compile Include="Spell\SpellEngine.cs" />
+    <Compile Include="Spell\SpellFactory.cs" />
+    <Compile Include="Spell\ThesMeaning.cs" />
+    <Compile Include="Spell\ThesResult.cs" />
+    <Compile Include="TextCat\BagOfWordsFeatureExtractor.cs" />
+    <Compile Include="TextCat\BasicProfileFactoryBase.cs" />
+    <Compile Include="TextCat\CharacterNGramExtractor.cs" />
+    <Compile Include="TextCat\Classify\Bag.cs" />
+    <Compile Include="TextCat\Classify\ComparisonComparer.cs" />
+    <Compile Include="TextCat\Classify\Distribution.cs" />
+    <Compile Include="TextCat\Classify\GaussianBag.cs" />
+    <Compile Include="TextCat\Classify\IBag.cs" />
+    <Compile Include="TextCat\Classify\ICategorizedClassifier.cs" />
+    <Compile Include="TextCat\Classify\IClassifier.cs" />
+    <Compile Include="TextCat\Classify\IDistanceCalculator.cs" />
+    <Compile Include="TextCat\Classify\IDistribution.cs" />
+    <Compile Include="TextCat\Classify\IFeatureExtractor.cs" />
+    <Compile Include="TextCat\Classify\ILanguageIdentifier.cs" />
+    <Compile Include="TextCat\Classify\IModifiableDistribution.cs" />
+    <Compile Include="TextCat\Classify\IStringTokenizer.cs" />
+    <Compile Include="TextCat\Classify\ITextReaderTokenizer.cs" />
+    <Compile Include="TextCat\Classify\ITrainee.cs" />
+    <Compile Include="TextCat\Classify\KnnMonoCategorizedClassifier.cs" />
+    <Compile Include="TextCat\Classify\NaiveBayesClassifier.cs" />
+    <Compile Include="TextCat\Classify\NonlinearVectorDistanceCalculator.cs" />
+    <Compile Include="TextCat\Classify\VectorDistanceCalculator.cs" />
+    <Compile Include="TextCat\Common\EnumeratorDataReader.cs" />
+    <Compile Include="TextCat\Common\ExternalApplication.cs" />
+    <Compile Include="TextCat\Common\StringExtensions.cs" />
+    <Compile Include="TextCat\Common\StringsTextReader.cs" />
+    <Compile Include="TextCat\Common\TextReaderStream.cs" />
+    <Compile Include="TextCat\Common\TupleSequenceDataReader.cs" />
+    <Compile Include="TextCat\DistributionDistanceCalculator.cs" />
+    <Compile Include="TextCat\LanguageIdentificationResult.cs" />
+    <Compile Include="TextCat\LanguageInfo.cs" />
+    <Compile Include="TextCat\LanguageModel.cs" />
+    <Compile Include="TextCat\LanguageModelCreator.cs" />
+    <Compile Include="TextCat\LanguageModelPersister.cs" />
+    <Compile Include="TextCat\NaiveBayesLanguageIdentifier.cs" />
+    <Compile Include="TextCat\NaiveBayesLanguageIdentifierFactory.cs" />
+    <Compile Include="TextCat\RankedClassifier.cs" />
+    <Compile Include="TextCat\RankedLanguageIdentifier.cs" />
+    <Compile Include="TextCat\RankedLanguageIdentifierFactory.cs" />
+    <Compile Include="TextCat\RankingDistanceCalculator.cs" />
+    <Compile Include="TextCat\TextLanguageGuesser.cs" />
+    <Compile Include="TextCat\Tokenizer.cs" />
+    <Compile Include="TextCat\XmlLanguageModelPersister.cs" />
+    <Compile Include="TextCat\XmlProfilePersister.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Profiles\el">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profiles\en">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profiles\gren">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{3440DAC3-7EF2-4322-80F2-9DB54AB616F8}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <EmbeddedResource Include="Resources\GreekHunspell\el_GR.aff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\GreekHunspell\el_GR.dic">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\GreeklishDictiorany.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Spell\Engine\Hunspellx64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Spell\Engine\Hunspellx86.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
